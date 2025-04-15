@@ -1,0 +1,15 @@
+export { default as backgroundImage } from "./images/background.png";
+export { default as checkIcon } from "./icons/check.svg";
+export { default as closeIcon } from "./icons/close.svg";
+export { default as crossIcon } from "./icons/cross.svg";
+export { default as emailIcon } from "./icons/email.svg";
+export { default as menuIcon } from "./icons/menu.svg";
+export { default as mobIcon } from "./icons/mobIcon.png";
+export { default as profilePicAlt } from "./icons/profilePicAlt.svg";
+export { default as searchIcon } from "./icons/search.svg";
+export { default as settingsIcon } from "./icons/settings.svg";
+export { default as templateIcon } from "./icons/template.svg";
+export { default as usersIcon } from "./icons/users.svg";
+export { default as WalacorLogo } from "./images/walacor_logo.png";
+export { default as showPasswordIcon } from "./icons/showPassword.png";
+export { default as hidePasswordIcon } from "./icons/hidePassword.png";

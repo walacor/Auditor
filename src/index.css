@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@font-face {
+  font-family: "Quicksand";
+  src: local("Quicksand"),
+    url("./assets/fonts/Quicksand.ttf") format("opentype");
+  font-weight: normal;
+}

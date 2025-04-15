@@ -1,0 +1,13 @@
+export const Colors = {
+  PURPLE_BLUE_ONE: "#d2e1fa",
+  BACKGROUND_PURPLE: "#d5d6ff",
+  LIGHT_BLUE: "#dcfdff",
+  BLUISH_GREEN: "#7bbfc7",
+  BLUE_PRIMARY: "#2c6cfc",
+  BLUE_SECONDARY: "#74b8e5",
+  TEXT_GRAY: "#9c9c9c",
+  DEFAULT_BACKGROUND: "#F6F6F6",
+  BLACK: "#000000",
+  DISABLED_GRAY: "#7A7A7A",
+  SELECTED_GRAY: "#323232",
+};

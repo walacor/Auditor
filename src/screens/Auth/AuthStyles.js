@@ -10,9 +10,9 @@ const BodyContainer = styled.div`
   background: rgb(255, 255, 255);
   background: linear-gradient(
     114deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgb(244, 244, 244) 50%,
-    rgb(221, 249, 254) 100%
+    rgb(211, 211, 211) 0%,
+    rgb(255, 255, 255) 50%,
+    rgb(209, 248, 255) 100%
   );
 `;
 const BoxContainer = styled.div`

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Colors } from "../../config/colors";
+import { Colors } from "../../constants/colors";
 
 const DefButton = styled.button`
   background-color: ${(props) => props.backgroundColor || Colors.BLUISH_GREEN};

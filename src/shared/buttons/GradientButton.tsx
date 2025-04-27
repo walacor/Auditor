@@ -1,6 +1,10 @@
 import styled from "styled-components";
+import { StyledLoader } from "..";
 
-const StyledButton = styled.button`
+interface StyledButtonProps {
+  borderRadius?: string | number;
+}
+const StyledButton = styled.button<StyledButtonProps>`
   background-image: linear-gradient(
     to right,
     rgb(123, 192, 199) 0%,
@@ -28,11 +32,28 @@ const StyledButton = styled.button`
   }
 `;
 
+interface GradientButtonProps {
+  label: string;
+  onClick: () => void;
+  borderRadius?: number | string;
+  loading?: boolean;
+  disabled?: boolean;
+}
 // Button Component
-const GradientButton = ({ label, onClick, borderRadius }) => {
+const GradientButton = ({
+  label,
+  onClick,
+  borderRadius,
+  loading,
+  disabled,
+}: GradientButtonProps) => {
   return (
-    <StyledButton onClick={onClick} borderRadius={borderRadius}>
-      {label}
+    <StyledButton
+      onClick={onClick}
+      borderRadius={borderRadius}
+      disabled={disabled}
+    >
+      {loading ? <StyledLoader /> : label}
     </StyledButton>
   );
 };

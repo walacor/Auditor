@@ -2,6 +2,7 @@ import {
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
   USER_LOGIN_FAILURE,
+  RESET_STATE,
 } from "../actions/actionType";
 
 const initialState = {
@@ -32,6 +33,8 @@ const userLoginReducer = (state = initialState, action) => {
         login: "",
         error: action.payload,
       };
+    case RESET_STATE:
+      return initialState;
     default:
       return state;
   }

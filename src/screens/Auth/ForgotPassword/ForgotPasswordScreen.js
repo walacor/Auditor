@@ -37,7 +37,7 @@ const ForgotPasswordScreen = () => {
             </BoxHeaderTitle>
           </BoxHeader>
           <Circle>
-            <img src={WalacorLogo} alt="Mobcoder Icon" width={50} height={50} />
+            <img src={WalacorLogo} alt="Walacor Icon" width={50} height={50} />
           </Circle>
           <BoxBody>
             <TextDiv>

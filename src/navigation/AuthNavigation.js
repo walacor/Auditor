@@ -17,7 +17,7 @@ import DashboardNavigation from "./DashboardNavigation";
 const AuthNavigation = () => {
   const isLoggedIn = useSelector((state) => state.userLogin.isLogIn);
 
-  return false ? (
+  return isLoggedIn ? (
     <DashboardNavigation />
   ) : (
     <Router>

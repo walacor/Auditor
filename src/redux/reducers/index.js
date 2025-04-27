@@ -3,6 +3,9 @@ import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 import userLoginReducer from "./userLoginReducer";
+import sidebarReducer from "./sidebarReducer";
+import checkSchemaReducer from "./checkSchemaReducer";
+import anchorListReducer from "./anchorListReducer";
 
 const persistConfig = {
   key: "root",
@@ -10,6 +13,9 @@ const persistConfig = {
 };
 const appReducer = combineReducers({
   userLogin: userLoginReducer,
+  sidebar: sidebarReducer,
+  schema: checkSchemaReducer,
+  anchorList: anchorListReducer,
 });
 
 const rootReducer = (state, action) => {

@@ -1,2 +1,2 @@
-export { Colors } from "./colors";
+export { Colors } from "../constants/colors";
 export * from "./services/userServices"

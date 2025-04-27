@@ -71,7 +71,7 @@ const InputDiv = styled.div`
 const Image = styled.img`
   height: ${(props) => props.height || "25px"};
   width: ${(props) => props.width || "25px"};
-  margin: 10px 10px;
+  margin: 10px 10px;      
   cursor: ${(props) => props.cursor || "pointer"};
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   &:hover {

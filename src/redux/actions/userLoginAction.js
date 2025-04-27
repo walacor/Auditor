@@ -11,10 +11,10 @@ const userLogin = (data) => {
     dispatch(userLoginRequest());
     userLoginService(data)
       .then((response) => {
-        if (response.data.statusCode !== 1) {
-          dispatch(userLoginFailure(response.data.responseMessage));
+        if (response.data.status === 200) {
+          dispatch(userLoginSuccess(response.data.data));
         } else {
-          dispatch(userLoginSuccess(response.data.responseData));
+          dispatch(userLoginFailure(response.data.data));
         }
       })
       .catch((error) => {

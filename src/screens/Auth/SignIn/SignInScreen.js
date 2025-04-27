@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { connect } from "react-redux";
 import { useSelector, useDispatch } from "react-redux";
+
 import {
   BodyContainer,
   BoxContainer,
@@ -17,13 +17,12 @@ import {
   Text,
   GradientButton,
   GrayText,
-  Loader,
 } from "../../../shared";
-import { verifyMail, verifyPassword } from "../../../utils";
 import { userLogin } from "../../../redux/actions";
+import { Strings } from "../../../constants";
 
 const SignInScreen = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [mailErrorMessage, setMailErrorMessage] = useState("");
   const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
@@ -34,40 +33,65 @@ const SignInScreen = () => {
     navigate("/forgotPassword");
   };
   const onSignInClick = async () => {
-    const data = {
-      email: email,
-      password: password,
-      deviceTypeID: 3,
-    };
-
-      // console.log("something",data)
+    if (password && username) {
+      setMailErrorMessage("");
+      setPasswordErrorMessage("");
+      const data = {
+        userName: username,
+        password: password,
+      };
       dispatch(userLogin(data));
+    }else {
+      if (!username) {
+        setMailErrorMessage("Please enter your email");
+      } else {
+        setMailErrorMessage("");
+      }
+      if (!password) {
+        setPasswordErrorMessage("Please enter your password");
+      } else {
+        setPasswordErrorMessage("");
+      }
+    }
   };
   return (
     <BodyContainer>
       <BoxContainer>
         <BoxHeader>
-          <Text fontSize="56px">Auditor </Text>
+          <Text fontSize="56px">{Strings.AUDITOR}</Text>
         </BoxHeader>
         <Circle>
           <img src={WalacorLogo} alt="Mobcoder Icon" width={50} height={50} />
         </Circle>
         <BoxBody>
           <TextDiv>
-            <Text fontSize="16px">Username</Text>
+            <Text fontSize="16px">{Strings.USERNAME}</Text>
           </TextDiv>
-          <InputField isEmail func={setEmail} />
+          <InputField isEmail func={setUsername} />
+          {mailErrorMessage && (
+            <Text fontSize="12px" color="red">
+              {mailErrorMessage}
+            </Text>
+          )}
           <TextDiv>
-            <Text fontSize="16px">Password</Text>
+            <Text fontSize="16px">{Strings.PASSWORD}</Text>
           </TextDiv>
           <InputField func={setPassword} />
+          {passwordErrorMessage && (
+            <Text fontSize="12px" color="red">
+              {passwordErrorMessage}
+            </Text>
+          )}
         </BoxBody>
         <BoxFooter>
-          <GradientButton onClick={onSignInClick} label={"Sign In"} />
-          {loading ? <Loader /> : ""}
+          <GradientButton
+            onClick={onSignInClick}
+            label={Strings.SIGN_IN}
+            loading={loading}
+          />
 
           <GrayText onClick={navToForgotPassword}>
-            Forgot your Password ?
+            {Strings.FORGOT_PASSWORD}
           </GrayText>
         </BoxFooter>
       </BoxContainer>
